@@ -1,0 +1,67 @@
+
+-----------------------------------------------------------------------------------
+--------------------- Pasantía de Verano de Pebro Poblete -------------------------
+-----------------------------------------------------------------------------------
+
+En este repositorio iremos agregando los programas para hacer el análisis de datos.
+
+Para el estudio del sistema HD142527 haremos un estudio variando:
+     - la eccentricidad de la binaria
+     - la inclinación de la binaria
+Los valores de referencia son e=0.5 y i=70º
+
+Los objetivos son los siguientes:
+    - calcular la inclinación del disco interno y estudiar su evolución
+    - estudiar el fenómeno de acreción de material desde las partes externas
+
+Nombres de las simulaciones hidrodinámicas con PHANTOM:
+    - REF: 	    e=0.5, i=70º
+    - ecc000:	    e=0.0, i=70º
+    - ecc025:	    e=0.25, i=70º
+    - ecc075:	    e=0.75, i=70º
+    - inc00:	    e=0.5, i=0º
+    - inc30:	    e=0.5, i=30º
+    - inc50:	    e=0.5, i=50º
+    - inc90:	    e=0.5, i=90º
+
+IMPORTANTE: Parámetros de la simulación REF ()
+
+# input file for binarydisc setup routines
+
+# resolution
+                  np =      1000000    ! number of particles
+
+# units
+           dist_unit =      1*au    ! distance unit (e.g. au)
+           mass_unit =      solarm    ! mass unit (e.g. solarm)
+
+# options for binary
+                  m1 =       1.800    ! primary mass
+                  m2 =       0.300    ! secondary mass
+                 ecc =       0.500    ! binary eccentricity
+   binary_separation =         25.    ! binary separation
+          binary_inc =       0.000    ! binary inclination
+               accr1 =       1.000    ! primary accretion radius
+               accr2 =       1.000    ! secondary accretion radius
+
+# options for circumbinary disc
+      use_binarydisc =           T    ! setup circumbinary disc
+          R_inbinary =         30.    ! inner radius for circumbinary disc
+         R_outbinary =        150.    ! outer radius for circumbinary disc
+        HoverRbinary =       0.100    ! H/R for circumbinary disc
+          xincbinary =         70.    ! inclination in degrees for circumbinary disc
+       ismoothbinary =           F    ! smooth density at inner edge for circumbinary disc
+      discmassbinary =       0.020    ! disc mass for circumbinary disc
+       p_indexbinary =       1.000    ! surface density profile for circumbinary disc
+       q_indexbinary =       0.250    ! temperature profile for circumbinary disc
+             alphaSS =       0.010    ! desired Shakura-Sunyaev alpha viscosity parameter
+
+# options for circumprimary disc
+     use_primarydisc =           F    ! setup circumprimary disc
+
+# options for circumsecondary disc
+   use_secondarydisc =           F    ! setup circumsecondary disc
+
+# timestepping
+             norbits =        1000    ! maximum number of binary orbits
+              deltat =       0.100    ! output interval as fraction of binary orbital period

@@ -1,0 +1,39 @@
+# input file for binarydisc setup routines
+
+# resolution
+                  np =      1000000    ! number of particles
+
+# units
+           dist_unit =      1*au    ! distance unit (e.g. au)
+           mass_unit =      solarm    ! mass unit (e.g. solarm)
+
+# options for binary
+                  m1 =       1.800    ! primary mass
+                  m2 =       0.300    ! secondary mass
+                 ecc =       0.500    ! binary eccentricity
+   binary_separation =         25.    ! binary separation
+          binary_inc =       0.000    ! binary inclination
+               accr1 =       1.000    ! primary accretion radius
+               accr2 =       1.000    ! secondary accretion radius
+
+# options for circumbinary disc
+      use_binarydisc =           T    ! setup circumbinary disc
+          R_inbinary =         30.    ! inner radius for circumbinary disc
+         R_outbinary =        150.    ! outer radius for circumbinary disc
+        HoverRbinary =       0.100    ! H/R for circumbinary disc
+          xincbinary =         70.    ! inclination in degrees for circumbinary disc
+       ismoothbinary =           F    ! smooth density at inner edge for circumbinary disc
+      discmassbinary =       0.020    ! disc mass for circumbinary disc
+       p_indexbinary =       1.000    ! surface density profile for circumbinary disc
+       q_indexbinary =       0.250    ! temperature profile for circumbinary disc
+             alphaSS =       0.010    ! desired Shakura-Sunyaev alpha viscosity parameter
+
+# options for circumprimary disc
+     use_primarydisc =           F    ! setup circumprimary disc
+
+# options for circumsecondary disc
+   use_secondarydisc =           F    ! setup circumsecondary disc
+
+# timestepping
+             norbits =        1000    ! maximum number of binary orbits
+              deltat =       0.100    ! output interval as fraction of binary orbital period

@@ -1,0 +1,28 @@
+
+# gas disc parameters
+                R_in =         30.    ! inner disc boundary
+               R_out =        150.    ! outer disc boundary
+                 H_R =       0.100    ! disc aspect ratio H/R at R=R_in
+           H/R (R=1) =  0.0427287006396  ! disc aspect ratio H/R at R=1
+       H/R (R=R_out) =  0.149534878  ! disc aspect ratio H/R at R=R_out
+                Qmin =  25.2203766    ! minimum Toomre Q parameter
+                   n =      100000    ! number of particles in the disc
+             p_index =       1.000    ! power law index of surface density profile
+             q_index =       0.250    ! power law index of sound speed profile
+              M_star =       2.100    ! mass of central star
+              M_disc =       0.020    ! disc mass
+       disc m/star m =  0.0095238095238  ! relative disc mass
+                Sig0 =   2.642E-05    ! surface density at R=1
+                 cs0 =  0.0619197698844  ! sound speed at R=1
+                T_in =  179.123315    ! temperature (K) at R=R_in
+               T_out =  80.1063818    ! temperature (K) at R=R_out
+             inc.deg =         70.    ! disc inclination in degrees
+               <h/H> =  0.34011051    ! approx. mean smoothing length over disc scale height
+         alphaSS_min =  0.0072144368246  ! minimum Shakura-Sunyaev alpha viscosity in disc
+         alphaSS_max =  0.0161352826678  ! maximum Shakura-Sunyaev alpha viscosity in disc
+               udist =   1.496E+13    ! distance units (cgs)
+               umass =   1.989E+33    ! mass units (cgs)
+               utime =   5.023E+06    ! time units (cgs)
+                   G =       1.000    ! in code units
+                   c =   1.007E+04    ! in code units
+
