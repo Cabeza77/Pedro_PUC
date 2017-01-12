@@ -2,4 +2,5 @@ La parte de ajustar un plano a un conjunto de puntos esta, creo, sin problemas.
 El método para calcular el plano como f(x,y) no resulta ser muy eficiente y práctico.
 Se cambia la funcion a minimizar, ahora se minimiza la distancia a un plano de la forma Ax+By+Cz+D=0.
 Queda pendiente la parte de filtrar los datos para obtener un mejor ajuste en la regiones interiores.
-Se realiza la primera versión de una rutina RANSAC en python, puede tener errores debido a una sintaxis mal comprendida de matlab 
+Se realiza la primera versión de una rutina RANSAC en python, puede tener errores debido a una sintaxis mal comprendida de matlab
+Se crea y prueba con exito una rutina RANSAC :D 
