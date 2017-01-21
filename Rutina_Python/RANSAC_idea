@@ -1,0 +1,32 @@
+El archivo RANSAC.py posee dos funciónes (las que importan), RANSAC_3 y RANSAC_N
+
+RANSAC_3(set_points,iterations,threshold) 
+
+	set_points: conjunto de puntos de la forma [[x1,y1,z1]...[xn,yn,zn]]
+	number_iterations: numero de iteraciones
+	threshold: distancia (euclideana) para considerar si un punto esta acorde con el modelo o no 
+
+	IDEA: dado un set de puntos elige 3 al azar para ajustar un plano y calcular el error o distancia de todos los puntos a 
+	      ese plano, en todas las iteraciones elige 3 puntos al azar y retornara el vector normal al plano que menor error
+              (suma de las distancias puntos-plano) se haya encontrado.
+	      Debido a que considera solo 3 puntos para el ajuste la parte de mínimos cuadrados es omitida.
+
+	retorna: puntos inliers, puntos outliers, vector normal normalizado, mejor error
+
+RANSAC_N(set_points, min_points, number_iterations, threshold, near_points) 
+
+	set_points: conjunto de puntos de la forma [[x1,y1,z1]...[xn,yn,zn]]
+	min_points: el minimo de puntos con el que realizar el modelo de plano
+	number_iterations: numero de iteraciones
+	threshold: distancia (euclideana) para considerar si un punto esta acorde con el modelo o no 
+	near_points: puntos minimos necesarios para considerarlos en el ajuste
+
+	IDEA: dado un set de puntos elige "min_points" al azar para ajustar un plano, luego si en el plano ajustado hay un número
+	      mayor o igual a "near_points" que cumplen con la condición de que la distancia al plano es menor a "threshold", se 
+	      procede a volver a ajustar un plano a todos los puntos que cumplan la condición anterior. Realiza esto en todas las 
+	      iteraciones y retornara el vector normal al plano que menor error (suma de las distancias puntos-plano) se haya 
+	      encontrado.
+	      A diferencia de RANSAC_3, esta función si emplea el uso de mínimos cuadrados para ajustar el plano, utiliza Least_Squares
+	      de scipy.
+
+	retorna: puntos inliers, puntos outliers, vector normal normalizado, mejor error
